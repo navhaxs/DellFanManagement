@@ -1,0 +1,21 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d" d:DesignWidth="452" d:DesignHeight="450"
+        x:Class="DellFanManagementTrayApp.MainWindow"
+        Title="DellFanManagementTrayApp"
+        ExtendClientAreaToDecorationsHint="True"
+        ExtendClientAreaTitleBarHeightHint="-1"
+        TransparencyLevelHint="AcrylicBlur"
+        ExtendClientAreaChromeHints="PreferSystemChrome"
+        Background="{x:Null}"
+        Width="452">
+ 
+  <!--<Panel Background="Transparent" IsHitTestVisible="False">
+    <DockPanel HorizontalAlignment="Stretch" Background="Transparent" IsHitTestVisible="False">
+      --><!--<ExperimentalAcrylicBorder IsHitTestVisible="False">--><!--
+      --><!----><!--
+    </DockPanel>
+  </Panel>-->
+</Window>

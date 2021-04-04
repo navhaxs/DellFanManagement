@@ -75,7 +75,7 @@ namespace DellFanManagement.SmmIo
 
                     return ExecuteCommand(ref message);
                 }
-                catch (Exception)
+                catch (Exception ex)
                 {
                     return false;
                 }

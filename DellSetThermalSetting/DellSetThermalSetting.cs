@@ -21,13 +21,18 @@ namespace DellFanManagement.SetThermalSetting
                 Console.WriteLine("Source code available at https://github.com/AaronKelley/DellFanManagement");
                 Console.WriteLine();
 
+                ThermalSetting newSetting, currentSetting;
+
+                currentSetting = DellSmmIoLib.GetThermalSetting();
+                Console.WriteLine("Thermal setting, before change: {0}", currentSetting);
+
+
                 if (args.Length != 1)
                 {
                     Usage();
                     return -1;
                 }
 
-                ThermalSetting newSetting, currentSetting;
 
                 // Determine the requested setting from the command line parameter.
                 switch (args[0].ToLower())
