@@ -11,3 +11,18 @@ http://forum.notebookreview.com/threads/dellfanmanagement-dellfankeepalive-%E2%8
 I added a no frills tray app and Windows service.
 
 Compared to official Dell Power Manager app which takes ~28 seconds to start up, my trap app gives me immediate and easy access to switching thermal profiles!!
+
+# How to install
+
+First, install and start the service.
+
+```
+DellThermalSettingService\bin\Release\net5.0\DellThermalSettingService.exe install
+DellThermalSettingService\bin\Release\net5.0\DellThermalSettingService.exe start
+```
+
+Then launch the GUI tray app. From the tray menu, select to tick 'Autostart' so it auto-launches on startup
+
+```
+DellFanManagementTrayAppWpf\bin\Release\net5.0-windows\DellFanManagementTrayAppWpf.exe
+```
