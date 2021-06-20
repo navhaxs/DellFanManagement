@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
@@ -20,6 +21,8 @@ namespace DellFanManagementTrayAppWpf
         public static void CreateNotifyIcon()
         {
             notifyicon = new System.Windows.Forms.NotifyIcon();
+
+            notifyicon.MouseUp += Notifyicon_MouseUp; ;
 
             var currentThermalSetting = ThermalSettingUtil.GetThermalSetting();
 
@@ -62,6 +65,12 @@ namespace DellFanManagementTrayAppWpf
             
 
             notifyicon.Visible = true;
+        }
+
+        private static void Notifyicon_MouseUp(object sender, MouseEventArgs e)
+        {
+            MethodInfo mi = typeof(NotifyIcon).GetMethod("ShowContextMenu", BindingFlags.Instance | BindingFlags.NonPublic);
+            mi.Invoke((NotifyIcon)sender, null);
         }
 
         private static void Contextmenu_Opening(object sender, System.ComponentModel.CancelEventArgs e)
