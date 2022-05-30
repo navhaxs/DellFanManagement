@@ -1,9 +1,10 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk.Worker">
 
   <PropertyGroup>
-    <TargetFramework>net5.0</TargetFramework>
+    <TargetFramework>net6.0-windows</TargetFramework>
     <UserSecretsId>dotnet-DellThermalSettingService-A00FB0D0-4EDD-426C-8A36-159EFF101A6A</UserSecretsId>
     <ApplicationManifest>app.manifest</ApplicationManifest>
+    <StartupObject>DellThermalSettingService.Program</StartupObject>
   </PropertyGroup>
 
   <ItemGroup>

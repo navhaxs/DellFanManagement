@@ -1,28 +1,53 @@
-# DellFanManagement
-A suite of tools for managing the fans in many Dell laptops.
+# Dell Thermal Setting Tray App
 
-See this NotebookReview thread for information about the tools contained in this project.
-http://forum.notebookreview.com/threads/dellfanmanagement-dellfankeepalive-%E2%80%93-tools-for-managing-the-fan-speed-in-dell-laptops.833340/
-
-# Jeremy's fork
+A no frills tray app (backed by a Windows service) to adjust the thermal settings of Dell laptops.
 
 ![screenshot](https://user-images.githubusercontent.com/5162718/113504987-4e2eb080-957f-11eb-90f0-0f6d82a2732a.PNG)
 
-I added a no frills tray app and Windows service.
+Compared to official Dell Power Manager app which takes ~28 seconds to start up, my trap app gives me **immediate and easy access** to switching thermal profiles!!
 
-Compared to official Dell Power Manager app which takes ~28 seconds to start up, my trap app gives me immediate and easy access to switching thermal profiles!!
+> **This is a fork of [AaronKelley/DellFanManagement](https://github.com/AaronKelley/DellFanManagement). Full credit and kudos to Aaron for the Dell Smbios library code. All I did was create a GUI and Windows service.**
 
-# How to install
+# Free Download
 
-First, install and start the service.
+See [Releases](https://github.com/navhaxs/DellFanManagement/releases/) for download
+
+Requires Dell Power Manager and Windows 10. Tested on Dell XPS 15 9570 (2018) and Dell Latitude 7390 2-in-1 (2018) models. 
+
+Tested on Windows 10 x64
+
+> The app is published as a "self-contained" net6.0 app so you don't need any frameworks etc installed locally at all (pretty cool!)
+
+# Instructions
+
+Unzip to somwehere e.g. `C:\opt\DellFanManagement\`
+
+Run as Administrator:
+```
+DellThermalSettingService.exe install
+DellThermalSettingService.exe start
+```
+
+Then launch the GUI tray app `DellFanManagementTrayAppWpf.exe`.
+
+Choose 'Autostart' from tray menu so it auto-starts on startup
+
+# How to uninstall
+
+Run as Administrator:
+```
+DellThermalSettingService.exe uninstall
+```
+
+From the tray menu, unselect 'Autostart', then 'Exit'
+
+Finally, delete `C:\opt\DellFanManagement\` :)
+
+# Misc
+
+If building yourself, the default EXE build paths are:
 
 ```
-DellThermalSettingService\bin\Release\net5.0\DellThermalSettingService.exe install
-DellThermalSettingService\bin\Release\net5.0\DellThermalSettingService.exe start
-```
-
-Then launch the GUI tray app. From the tray menu, select to tick 'Autostart' so it auto-launches on startup
-
-```
-DellFanManagementTrayAppWpf\bin\Release\net5.0-windows\DellFanManagementTrayAppWpf.exe
+DellThermalSettingService\bin\Release\net6.0-windows\win-x64\
+DellFanManagementTrayAppWpf\bin\Release\net6.0-windows\win-x64\
 ```
